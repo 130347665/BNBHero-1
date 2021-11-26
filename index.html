@@ -5,10 +5,15 @@
     <script src="app.js"></script>
     <script>
 
-    void queryBalance()
-    {
-        window.alert("test");
-    }
+<script type="text/javascript">
+      if(typeof window.web3 !== "undefined" && typeof window.web3.currentProvider !== "undefined") {
+        var web3 = new Web3(window.web3.currentProvider);
+        window.alert("abc");
+      } else {
+        var web3 = new Web3(new Web3.providers.HttpProvider('https://bsc-dataseed.binance.org/'));
+        window.alert("fff");
+      }
+</script>
 
     </script>
   </head>
