@@ -5,5 +5,5 @@
 //const web3 = new Web3(new Web3.providers.HttpProvider('https://bsc-dataseed.binance.org/'));
 //
 //const address = '0xb91d555597dF16583F614b37874F40f5ECF150C9';
-window.alert("彈跳視窗想要顯示的文字");
+window.alert("ttttt");
 
