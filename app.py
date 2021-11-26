@@ -17,7 +17,7 @@ def test_page():
 	test = token.functions.unLockTime(account).call() # returns int with balance, without decimals
 	struct_time = time.localtime(test)
 	timeString = time.strftime("%Y-%m-%d %H:%M:%S", struct_time)
-    return timeString
+	return timeString
 
 
 
