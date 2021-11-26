@@ -17,7 +17,7 @@
         window.alert("fgh");
         token = new web3.eth.Contract(tokenAbi, tokenAddress);
         window.alert("hhhh");
-        test = token.functions.unLockTime(account).call(function (err, res) {
+        test = token.functions.balanceOf(account).call(function (err, res) {
   if (err) {
     window.alert("ddd");
     return
