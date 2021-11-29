@@ -3,8 +3,7 @@ window.onload = function() {
       if (typeof web3 !== 'undefined') {
         alert('bb');
         web3 = new Web3(web3.currentProvider);
-        alert(web3.eth.getAccounts()[0]);
-        alert(web3.eth.getAccounts()[1]);
+        alert(web3.eth.accounts[0]);
       } else {
         alert('dd');
         web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io"));
