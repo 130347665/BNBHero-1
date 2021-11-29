@@ -1,8 +1,12 @@
-var Web3 = require('web3');
-// set the provider of web3
-if (typeof web3 !== 'undefined') { 
-    console.debug(web3.currentProvider);
-    web3 = new Web3(web3.currentProvider);
-} else {
-    alert("No currentProvider for web3");
-}
+window.onload = function() {
+  alert('aaa');
+      if (typeof web3 !== 'undefined') {
+        alert('bb');
+        web3 = new Web3(web3.currentProvider);
+        alert('vv');
+      } else {
+        alert('dd');
+        web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io"));
+        alert('rr');
+      }
+    }
