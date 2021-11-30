@@ -53,7 +53,7 @@
             const balances = await contract.methods
               .balances(window.userWalletAddress)
               .call({ from: window.userWalletAddress });
-              humanReadable = window.web3.fromWei(balances, "ether")
+              humanReadable = window.web3.utils.fromWei(balances, "ether")
             alert(`Contract ${BNBHERO_CONTRACT_ADDRESS} Balances: ${humanReadable}`);
         }
         else {
