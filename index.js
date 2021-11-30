@@ -63,7 +63,7 @@
             for (var i = 0; i < heros.length; i++) {
                 html = html + '<img src="https://play.bnbheroes.io/cards/' + heros[i][1] + '.jpg">';
             }
-            document.getElementById("userHero").innerText = html;
+            document.getElementById("userHero").innerHTML = html;
         }
         else {
             alert("Your metamask network is wrong!");
