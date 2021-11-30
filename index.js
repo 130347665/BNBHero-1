@@ -44,7 +44,9 @@
 
     async function getContractSymbol() {
 
-        web3.eth.net.getId()
-.then(console.log);
+        if (web3.eth.net.getId() == 56)
+            console.error('aaaa');
+        else
+            console.error('error');
 
     }
