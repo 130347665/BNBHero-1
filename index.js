@@ -25,7 +25,7 @@
       window.userWalletAddress = accounts[0]
       window.userWalletAddress2 = accounts[1]
       userWallet.innerText = window.userWalletAddress
-      userWallet2.innerText = len(accounts)
+      userWallet2.innerText = accounts.length
       loginButton.innerText = 'Sign out of MetaMask'
 
       loginButton.removeEventListener('click', loginWithMetaMask)
