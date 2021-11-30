@@ -44,6 +44,7 @@
 
     async function getContractSymbol() {
 
-        alert(window.web3.eth.net.getId());
+        web3.eth.net.getId()
+.then(console.log);
 
     }
