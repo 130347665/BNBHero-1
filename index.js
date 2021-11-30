@@ -28,7 +28,7 @@
                 });
             window.userWalletAddress = selectedAccount;
             window.localStorage.setItem("userWalletAddress", selectedAccount);
-            window.web3.eth.net.getId(function (err, window.chainId) {});
+            window.chainId = await window.web3.eth.net.getId();
             getContractSymbol();
         } catch (error) {
             console.error(error);
