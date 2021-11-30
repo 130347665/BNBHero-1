@@ -44,6 +44,6 @@
 
     async function getContractSymbol() {
 
-        alert(window.web3.eth.net.getNetworkType());
+        alert(window.web3.eth.net.network());
 
     }
