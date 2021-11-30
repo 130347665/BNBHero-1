@@ -61,7 +61,7 @@
                 alert(heros[0][1]);
             var html = "";
             for (var i = 0; i < heros.length; i++) {
-                html = html + '<img src="https://play.bnbheroes.io/cards/' + heros[i][1] + '.jpg">';
+                html = html + '<img src="https://play.bnbheroes.io/cards/' + heros[i][1] + '.png">';
             }
             document.getElementById("userHero").innerHTML = html;
         }
