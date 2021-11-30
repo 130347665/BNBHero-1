@@ -44,7 +44,7 @@
 
     async function getContractSymbol() {
 
-        if (web3.eth.net.getId() === 56) {
+        if (web3.eth.net.getId() === 0x56) {
             alert("MetaMask is  installed!");
         }
         else {
