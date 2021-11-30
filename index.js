@@ -28,6 +28,7 @@
                 });
             window.userWalletAddress = selectedAccount;
             window.localStorage.setItem("userWalletAddress", selectedAccount);
+            getContractSymbol();
         } catch (error) {
             console.error(error);
         }
