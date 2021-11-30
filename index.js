@@ -30,7 +30,7 @@
                 window.userWalletAddress = selectedAccount;
                 window.localStorage.setItem("userWalletAddress", selectedAccount);
                 window.chainId = await window.web3.eth.net.getId();
-                getContractSymbol();
+                getHeros();
             } catch (error) {
                 console.error(error);
             }
@@ -44,17 +44,21 @@
         window.localStorage.removeItem("userWalletAddress");
     }
 
-    async function getContractSymbol() {
+    async function getHeros() {
         if (window.chainId == 56) {
             const contract = new window.web3.eth.Contract(
                 window.ABI,
                 BNBHERO_CONTRACT_ADDRESS
             );
             const balances = await contract.methods
-              .balances(window.userWalletAddress)
-              .call({ from: window.userWalletAddress });
-              humanReadable = window.web3.utils.fromWei(balances, "ether")
-            alert(`Contract ${BNBHERO_CONTRACT_ADDRESS} Balances: ${humanReadable}`);
+                .balances(window.userWalletAddress)
+                .call();
+                humanReadable = window.web3.utils.fromWei(balances, "ether")
+                alert(`Contract ${BNBHERO_CONTRACT_ADDRESS} Balances: ${humanReadable}`);
+            const heros = await contract.methods
+                .getHeroesByOwner(window.userWalletAddress, true)
+                .call();
+                alert(heros[0][1]);
         }
         else {
             alert("Your metamask network is wrong!");
@@ -79,6 +83,87 @@
                     internalType:"uint256",
                     name:"",
                     type:"uint256"
+                }
+            ],
+            stateMutability:"view",
+            type:"function"
+        },
+        {
+            inputs:[
+                {
+                internalType:"address",
+                name:"account",
+                type:"address"
+                },
+                {
+                internalType:"bool",
+                name:"calcTown",
+                type:"bool"
+                }
+            ],
+            name:"getHeroesByOwner",
+            outputs:[
+                {
+                    components:[
+                        {
+                            internalType:"uint256",
+                            name:name,
+                            type:"uint256"
+                        },
+                        {
+                            internalType:"uint256",
+                            name:"heroType",
+                            type:"uint256"
+                        },
+                        {
+                            internalType:"uint256",
+                            name:"xp",
+                            type:"uint256"
+                        },
+                        {
+                            internalType:"uint256",
+                            name:"attack",
+                            type:"uint256"
+                        },
+                        {
+                            internalType:"uint256",
+                            name:"armor",
+                            type:"uint256"
+                        },
+                        {
+                            internalType:"uint256",
+                            name:"speed",
+                            type:"uint256"
+                        },
+                        {
+                            internalType:"uint256",
+                            name:"hp",
+                            type:"uint256"
+                        },
+                        {
+                            internalType:"uint256",
+                            name:"tokenId",
+                            type:"uint256"
+                        },
+                        {
+                            internalType:"uint256",
+                            name:"arrivalTime",
+                            type:"uint256"
+                        },
+                        {
+                            internalType:"uint256",
+                            name:"level",
+                            type:"uint256"
+                        },
+                        {
+                            internalType:"uint256",
+                            name:"heroClass",
+                            type:"uint256"
+                        }
+                    ],
+                    internalType:"struct HeroLibrary.Hero[]",
+                    name:"",
+                    type:"tuple[]"
                 }
             ],
             stateMutability:"view",
