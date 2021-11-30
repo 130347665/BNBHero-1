@@ -44,6 +44,7 @@
     }
 
     async function getContractSymbol() {
+        console.error(window.chainId);
         if (window.chainId == 56) {
             alert("MetaMask is  installed!");
         }
