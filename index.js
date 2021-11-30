@@ -50,10 +50,11 @@
                 window.ABI,
                 BNBHERO_CONTRACT_ADDRESS
             );
-            const symbol = await contract.methods
-              .symbol()
+            const balances = await contract.methods
+              .balances()
               .call({ from: window.userWalletAddress });
-            alert(`Contract ${BNBHERO_CONTRACT_ADDRESS} Symbol: ${symbol}`);
+              humanReadable = window.web3.fromWei(balances, "ether")
+            alert(`Contract ${BNBHERO_CONTRACT_ADDRESS} Balances: ${humanReadable}`);
         }
         else {
             alert("Your metamask network is wrong!");
