@@ -1,4 +1,5 @@
     window.userWalletAddress = null
+    const BNBHERO_CONTRACT_ADDRESS = "0xD25631648E3Ad4863332319E8E0d6f2A8EC6f267";
     const loginButton = document.getElementById('loginButton')
     const userWallet = document.getElementById('userWallet')
 
@@ -29,7 +30,6 @@
             window.userWalletAddress = selectedAccount;
             window.localStorage.setItem("userWalletAddress", selectedAccount);
             window.chainId = await window.web3.eth.net.getId();
-            window.network = await web3.eth.net.getNetworkType();
             getContractSymbol();
         } catch (error) {
             console.error(error);
@@ -45,12 +45,11 @@
     }
 
     async function getContractSymbol() {
-        console.log(window.network);
         if (window.chainId == 56) {
             alert("MetaMask is  installed!");
         }
         else {
-            alert("MetaMask is NOT installed!");
+            alert("Your metamask network is wrong!");
         }
 
     }
