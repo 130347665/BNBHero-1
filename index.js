@@ -1,6 +1,7 @@
     window.userWalletAddress = null
     const loginButton = document.getElementById('loginButton')
     const userWallet = document.getElementById('userWallet')
+    const userWallet2 = document.getElementById('userWallet2')
 
     function toggleButton() {
       if (!window.ethereum) {
@@ -22,7 +23,9 @@
       if (!accounts) { return }
 
       window.userWalletAddress = accounts[0]
+      window.userWalletAddress2 = accounts[1]
       userWallet.innerText = window.userWalletAddress
+      userWallet2.innerText = window.userWalletAddress2
       loginButton.innerText = 'Sign out of MetaMask'
 
       loginButton.removeEventListener('click', loginWithMetaMask)
@@ -34,6 +37,7 @@
     function signOutOfMetaMask() {
       window.userWalletAddress = null
       userWallet.innerText = ''
+      userWallet2.innerText = ''
       loginButton.innerText = 'Sign in with MetaMask'
 
       loginButton.removeEventListener('click', signOutOfMetaMask)
