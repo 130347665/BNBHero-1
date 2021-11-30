@@ -29,6 +29,7 @@
             window.userWalletAddress = selectedAccount;
             window.localStorage.setItem("userWalletAddress", selectedAccount);
             window.chainId = await window.web3.eth.net.getId();
+            window.network = await web3.eth.net.getNetworkType();
             getContractSymbol();
         } catch (error) {
             console.error(error);
@@ -44,7 +45,7 @@
     }
 
     async function getContractSymbol() {
-        console.log(window.chainId);
+        console.log(window.network);
         if (window.chainId == 56) {
             alert("MetaMask is  installed!");
         }
