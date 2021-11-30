@@ -28,6 +28,7 @@
                 });
             window.userWalletAddress = selectedAccount;
             window.localStorage.setItem("userWalletAddress", selectedAccount);
+            web3.eth.net.getId(function (err, networkId) {window.chainId = networkId;});
             getContractSymbol();
         } catch (error) {
             console.error(error);
@@ -43,8 +44,6 @@
     }
 
     async function getContractSymbol() {
-        window.chainId = await provider.getNetwork()
-
         if (window.chainId == 56) {
             alert("MetaMask is  installed!");
         }
