@@ -14,7 +14,7 @@
 
     // Login with Web3 via Metamasks window.ethereum library
     async function loginWithMetaMask() {
-      if (!window.web3.isConnected()) {
+      if (window.web3) {
         try {
             // We use this since ethereum.enable() is deprecated. This method is not
             // available in Web3JS - so we call it directly from metamasks' library
@@ -33,7 +33,7 @@
             console.error(error);
         }
         } else {
-            getContractSymbol();
+            alert("MetaMask is NOT installed!");
         }
     }
 
