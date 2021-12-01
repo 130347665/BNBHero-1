@@ -1,7 +1,6 @@
     window.userWalletAddress = null
     const BNBHERO_CONTRACT_ADDRESS = "0xde9fFb228C1789FEf3F08014498F2b16c57db855";
     const loginButton = document.getElementById('loginButton')
-    const userWallet = document.getElementById('userWallet')
 
     window.onload = async () => {
         if (typeof window.ethereum !== 'undefined') {
