@@ -87,7 +87,7 @@
         p2 = window.web3.eth.abi.encodeParameter('uint256', 5);
         await contract.methods
                 .fight(p1, p2)
-                .send({send: window.userWalletAddress});
+                .send({from: window.userWalletAddress});
 
     }
 
