@@ -86,7 +86,7 @@
         p1 = window.web3.eth.abi.encodeParameter('uint256', heroId);
         p2 = window.web3.eth.abi.encodeParameter('uint256', 5);
         await contract.methods
-                .fight(p1, p2)
+                .Fight(window.userWalletAddress, p1, p2, p2, p2, p2)
                 .call();
 
     }
@@ -210,5 +210,48 @@
             ],
             stateMutability:"nonpayable",
             type:"function"
+        },
+        {
+            anonymous:false,
+            inputs:[
+                {
+                    indexed:false,
+                    internalType:"address",
+                    name:"player",
+                    type:"address"
+                },
+                {
+                    indexed:false,
+                    internalType:"uint256",
+                    name:"_attackingHero",
+                    type:"uint256"
+                },
+                {
+                    indexed:false,
+                    internalType:"uint256",
+                    name:"enemyType",
+                    type:"uint256"
+                },
+                {
+                    indexed:false,
+                    internalType:"uint256",
+                    name:"rewards",
+                    type:"uint256"
+                },
+                {
+                    indexed:false,
+                    internalType:"uint256",
+                    name:"xpGained",
+                    type:"uint256"
+                },
+                {
+                    indexed:false,
+                    internalType:"uint256",
+                    name:"hpLoss",
+                    type:"uint256"
+                }
+            ],
+            name:"Fight",
+            type:"event"
         },
     ]
