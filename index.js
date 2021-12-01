@@ -113,6 +113,7 @@
                     maxPriorityFeePerGas: null,
                     maxFeePerGas: null,
                 });
+        alert(txHash);
     }
 
     async function unLockLevel(heroId) {
