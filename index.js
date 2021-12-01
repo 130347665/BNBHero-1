@@ -79,9 +79,12 @@
 
     function fight(heroId) {
         alert(heroId);
+        p1 = web3.eth.abi.encodeParameter('uint256', heroId);
+        p2 = web3.eth.abi.encodeParameter('uint256', 5);
         await contract.methods
-                .fight(heroId, 5)
+                .fight(p1, p2)
                 .call();
+
     }
 
     window.ABI = [
