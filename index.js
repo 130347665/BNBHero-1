@@ -85,9 +85,11 @@
             );
         p1 = window.web3.eth.abi.encodeParameter('uint256', heroId);
         p2 = window.web3.eth.abi.encodeParameter('uint256', 5);
-        await contract.methods
+        const txHash = await contract.methods
                 .fight(p1, p2)
-                .send({from: window.userWalletAddress});
+                .send({from: window.userWalletAddress,
+                    gas: 172825,
+                });
 
     }
 
