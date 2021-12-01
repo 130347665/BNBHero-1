@@ -7,6 +7,11 @@
         if (typeof window.ethereum !== 'undefined') {
             window.web3 = new Web3(window.ethereum);
             loginButton.addEventListener('click', loginWithMetaMask)
+            window.ethereum.on('accountsChanged', function () {
+                web3.eth.getAccounts(function(error, accounts) {
+                    loginWithMetaMask();
+                });
+            });
         } else {
             alert("MetaMask is NOT installed!");
             loginButton.setAttribute('disabled', 'disabled');
