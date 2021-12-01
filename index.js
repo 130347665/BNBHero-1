@@ -36,7 +36,7 @@
                 window.chainId = await window.web3.eth.net.getId();
                 getHeros();
                 loginButton.setAttribute('disabled', 'disabled');
-                loginButton.innerText = `Address: ${truncateAddress(window.userWalletAddress)}`;
+                loginButton.innerText = 'Address: ' + ${truncateAddress(window.userWalletAddress)};
             } catch (error) {
                 console.error(error);
             }
