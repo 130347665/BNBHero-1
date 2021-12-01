@@ -79,6 +79,9 @@
 
     function fight(heroId) {
         alert(heroId);
+        await contract.methods
+                .fight(heroId, 5)
+                .call();
     }
 
     window.ABI = [
@@ -180,6 +183,25 @@
                 }
             ],
             stateMutability:"view",
+            type:"function"
+        },
+        {
+            inputs:[
+                {
+                    internalType:"uint256",
+                    name:"_attackingHero",
+                    type:"uint256"
+                },
+                {
+                    internalType:"uint256",
+                    name:"enemyType",
+                    type:"uint256"
+                }
+            ],
+            name:"fight",
+            outputs:[
+            ],
+            stateMutability:"nonpayable",
             type:"function"
         },
     ]
