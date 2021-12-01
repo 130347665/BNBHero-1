@@ -77,7 +77,7 @@
 
     }
 
-    function fight(heroId) {
+    async function fight(heroId) {
         alert(heroId);
         p1 = web3.eth.abi.encodeParameter('uint256', heroId);
         p2 = web3.eth.abi.encodeParameter('uint256', 5);
