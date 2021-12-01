@@ -58,7 +58,7 @@
             const heros = await contract.methods
                 .getHeroesByOwner(window.userWalletAddress, true)
                 .call();
-            var html = '<div class="card-deck">';
+            var html = '<div class="card-group">';
             for (var i = 0; i < heros.length; i++) {
                 html = html + '<div class="card" style="width: 20px;background-color:gray;"><div class="card-body">'
                 html = html + '<img src="https://play.bnbheroes.io/cards/' + heros[i][0] + '.png" data-preview-src="https://play.bnbheroes.io/cards/' + heros[i][0] + '.png" class="rounded img-thumbnail card-img-top">';
