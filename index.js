@@ -58,15 +58,16 @@
             const heros = await contract.methods
                 .getHeroesByOwner(window.userWalletAddress, true)
                 .call();
-            var html = "";
+            var html = '<div class="card-group">';
             for (var i = 0; i < heros.length; i++) {
-                html = html + '<div class="card" style="width: 200px;background-color:gray;"><div class="card-body">'
+                html = html + '<div class="card" style="width: 200px;"><div class="card-body">'
                 html = html + '<img src="https://play.bnbheroes.io/cards/' + heros[i][0] + '.png" data-preview-src="https://play.bnbheroes.io/cards/' + heros[i][0] + '.png" class="float-left rounded img-thumbnail card-img-top">';
                 html = html + '<h5 class="card-title text-center">NFT #' + heros[i][7] + '</h5>'
                 html = html + '<div class="progress"><div class="progress-bar bg-danger text-center text-dark" role="progressbar" style="width: ' + heros[i][6]/10 + '%;" aria-valuenow="' + heros[i][6] + '" aria-valuemin="0" aria-valuemax="100">' + heros[i][6] + '</div></div>'
                 html = html + '</div></div>'
 
             }
+            html = html + '<div>'
             document.getElementById("userHero").innerHTML = html;
         }
         else {
