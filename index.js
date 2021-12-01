@@ -12,9 +12,9 @@
                     loginWithMetaMask();
                 });
             });
-            if(!window.web3.isConnected()) {
+//            if(window.web3.isConnected()) {
                 loginWithMetaMask();
-            }
+//            }
         } else {
             alert("MetaMask is NOT installed!");
             loginButton.setAttribute('disabled', 'disabled');
