@@ -36,7 +36,7 @@
                 window.chainId = await window.web3.eth.net.getId();
                 getHeros();
                 loginButton.setAttribute('disabled', 'disabled');
-                loginButton.innerText = 'Address: ' + window.userWalletAddress;
+                loginButton.innerText = 'Address: ' + truncateAddress(window.userWalletAddress);
             } catch (error) {
                 console.error(error);
             }
@@ -45,6 +45,15 @@
         }
     }
 
+    function truncateAddress(address) {
+        if (!address) {
+            return "";
+        }
+        return ${address.substr(0, 5)}...${address.substr(
+            address.length - 5,
+            address.length
+        )};
+    }
 
     function logout() {
         window.userWalletAddress = null;
