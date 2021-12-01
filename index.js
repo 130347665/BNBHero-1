@@ -63,7 +63,7 @@
                 html = html + '<div class="card" style="width: 200px;"><div class="card-body">'
                 html = html + '<img src="https://play.bnbheroes.io/cards/' + heros[i][0] + '.png" data-preview-src="https://play.bnbheroes.io/cards/' + heros[i][0] + '.png" class="float-left rounded img-thumbnail card-img-top">';
                 html = html + '<h5 class="card-title text-center">NFT #' + heros[i][7] + '</h5>'
-                html = html + '<div class="progress"><div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="' + heros[i][6] + '" aria-valuemin="0" aria-valuemax="1000">' + heros[i][6] + '/1000</div></div>'
+                html = html + '<div class="progress"><div class="progress-bar bg-danger" role="progressbar" style="width: ' + heros[i][6]/10 + ';" aria-valuenow="' + heros[i][6] + '" aria-valuemin="0" aria-valuemax="1000">' + heros[i][6] + '/1000</div></div>'
                 html = html + '</div></div>'
 
             }
