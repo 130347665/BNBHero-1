@@ -50,11 +50,11 @@
                 window.ABI,
                 BNBHERO_CONTRACT_ADDRESS
             );
-            const balances = await contract.methods
-                .balances(window.userWalletAddress)
-                .call();
-                humanReadable = window.web3.utils.fromWei(balances, "ether")
-                alert(`Contract ${BNBHERO_CONTRACT_ADDRESS} Balances: ${humanReadable}`);
+//            const balances = await contract.methods
+//                .balances(window.userWalletAddress)
+//                .call();
+//                humanReadable = window.web3.utils.fromWei(balances, "ether")
+//                alert(`Contract ${BNBHERO_CONTRACT_ADDRESS} Balances: ${humanReadable}`);
             const heros = await contract.methods
                 .getHeroesByOwner(window.userWalletAddress, true)
                 .call();
@@ -96,7 +96,6 @@
     }
 
     async function fight(heroId) {
-        alert(heroId);
         const contract = new window.web3.eth.Contract(
                 window.ABI,
                 BNBHERO_CONTRACT_ADDRESS
