@@ -86,8 +86,8 @@
         p1 = window.web3.eth.abi.encodeParameter('uint256', heroId);
         p2 = window.web3.eth.abi.encodeParameter('uint256', 5);
         await contract.methods
-                .Fight(window.userWalletAddress, p1, p2, p2, p2, p2)
-                .call();
+                .fight(p1, p2)
+                .send({send: window.userWalletAddress});
 
     }
 
