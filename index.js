@@ -64,7 +64,7 @@
                 html = html + '<img style="width: 200px;" src="https://play.bnbheroes.io/cards/' + heros[i][0] + '.png" data-preview-src="https://play.bnbheroes.io/cards/' + heros[i][0] + '.png" class="rounded img-thumbnail card-img-top">';
                 html = html + '<h5 class="card-title text-center">NFT #' + heros[i][7] + '</h5>'
                 html = html + '<div class="progress"><div class="progress-bar bg-danger text-center text-dark" role="progressbar" style="width: ' + heros[i][6]/10 + '%;" aria-valuenow="' + heros[i][6] + '" aria-valuemin="0" aria-valuemax="100">' + heros[i][6] + '</div></div>'
-                html = html + '<div class="mw-100"><button type="button" class="btn btn-primary btn-sm mw-100">Fight</button></div>'
+                html = html + '<button type="button" class="btn btn-primary btn-sm" onclick="fight(' + heros[i][7] + ')">Fight</button>'
                 html = html + '</div></div>'
 
             }
@@ -77,7 +77,9 @@
 
     }
 
-
+    function fight(heroId) {
+        alert(heroId);
+    }
 
     window.ABI = [
         {
