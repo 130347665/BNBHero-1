@@ -68,7 +68,7 @@
                 html = html + '<div class="progress"><div class="progress-bar bg-danger text-center text-dark" role="progressbar" style="width: ' + heros[i][6]/10 + '%;" aria-valuenow="' + heros[i][6] + '" aria-valuemin="0" aria-valuemax="100">' + heros[i][6] + '</div></div>';
                 html = html + '<div class="btn-group btn-group-sm" role="group">';
                 html = html + '<button type="button" class="btn btn-primary" onclick="fight(' + heros[i][7];
-                if (exp == 999) {
+                if (exp == 999 || heros[i][6] < 200) {
                     html = html + ')" disabled>Fight</button>';
                 }
                 else
