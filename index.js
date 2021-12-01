@@ -60,6 +60,8 @@
                 .call();
             var html = '<div class="card-group">';
             for (var i = 0; i < heros.length; i++) {
+                exp = heros[i][2]/ 1000;
+                alert(exp);
                 html = html + '<div class="card" style="max-width: 230px;"><div class="card-body" style="width: 230px;background-color:gray;">'
                 html = html + '<img style="width: 200px;" src="https://play.bnbheroes.io/cards/' + heros[i][0] + '.png" data-preview-src="https://play.bnbheroes.io/cards/' + heros[i][0] + '.png" class="rounded img-thumbnail card-img-top">';
                 html = html + '<h5 class="card-title text-center">NFT #' + heros[i][7] + '</h5>'
@@ -104,7 +106,8 @@
         const txHash = await contract.methods
                 .unLockLevel(p1)
                 .send({from: window.userWalletAddress,
-                    gas: 172825,
+                    maxPriorityFeePerGas: null,
+                    maxFeePerGas: null,
                 });
     }
 
