@@ -61,7 +61,7 @@
             var html = "";
             for (var i = 0; i < heros.length; i++) {
                 html = html + '<div class="card" style="width: 18rem;"><div class="card-body">'
-                html = html + '<div><img height="300" src="https://play.bnbheroes.io/cards/' + heros[i][0] + '.png" data-preview-src="https://play.bnbheroes.io/cards/' + heros[i][0] + '.png" class="img-thumbnail"></div>';
+                html = html + '<img height="150" src="https://play.bnbheroes.io/cards/' + heros[i][0] + '.png" data-preview-src="https://play.bnbheroes.io/cards/' + heros[i][0] + '.png" class="img-thumbnail">';
                 html = html + '<h5 class="card-title">' + heros[i][7] + '</h5>'
                 html = html + '</div></div>'
 
