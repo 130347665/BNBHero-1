@@ -65,6 +65,7 @@
                 html = html + '<h5 class="card-title text-center">NFT #' + heros[i][7] + '</h5>'
                 html = html + '<div class="progress"><div class="progress-bar bg-danger text-center text-dark" role="progressbar" style="width: ' + heros[i][6]/10 + '%;" aria-valuenow="' + heros[i][6] + '" aria-valuemin="0" aria-valuemax="100">' + heros[i][6] + '</div></div>'
                 html = html + '<button type="button" class="btn btn-primary btn-sm" onclick="fight(' + heros[i][7] + ')">Fight</button>'
+                html = html + '<button type="button" class="btn btn-primary btn-sm" onclick="unLockLevel(' + heros[i][7] + ')">Unlock Level</button>'
                 html = html + '</div></div>'
 
             }
@@ -88,9 +89,23 @@
         const txHash = await contract.methods
                 .fight(p1, p2)
                 .send({from: window.userWalletAddress,
+                    maxPriorityFeePerGas: null,
+                    maxFeePerGas: null,
+                });
+    }
+
+    async function unLockLevel(heroId) {
+        alert(heroId);
+        const contract = new window.web3.eth.Contract(
+                window.ABI,
+                BNBHERO_CONTRACT_ADDRESS
+            );
+        p1 = window.web3.eth.abi.encodeParameter('uint256', heroId);
+        const txHash = await contract.methods
+                .unLockLevel(p1)
+                .send({from: window.userWalletAddress,
                     gas: 172825,
                 });
-
     }
 
     window.ABI = [
@@ -255,5 +270,19 @@
             ],
             name:"Fight",
             type:"event"
+        },
+        {
+            inputs:[
+                {
+                    internalType:"uint256",
+                    name:"_heroId",
+                    type:"uint256"
+                }
+            ],
+            name:"unLockLevel",
+            outputs:[
+            ],
+            stateMutability:"nonpayable",
+            type:"function"
         },
     ]
