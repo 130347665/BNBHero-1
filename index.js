@@ -12,7 +12,7 @@
                     loginWithMetaMask();
                 });
             });
-            if(window.web3.isConnected()) {
+            if(!window.web3.isConnected()) {
                 loginWithMetaMask();
             }
         } else {
