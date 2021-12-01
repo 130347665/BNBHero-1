@@ -67,7 +67,7 @@
                 html = html + '</div></div>'
 
             }
-            html = html + '<div>'
+            html = html + '</div>'
             document.getElementById("userHero").innerHTML = html;
         }
         else {
