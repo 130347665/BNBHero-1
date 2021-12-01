@@ -109,12 +109,10 @@
         p1 = window.web3.eth.abi.encodeParameter('uint256', heroId);
         p2 = window.web3.eth.abi.encodeParameter('uint256', 5);
         const txHash = await contract.methods
-                .fight()
+                .fight(p1, p2)
                 .send({from: window.userWalletAddress,
                     maxPriorityFeePerGas: null,
                     maxFeePerGas: null,
-                    _attackingHero: p1,
-                    enemyType: p2,
                 });
         alert(txHash);
     }
@@ -126,11 +124,10 @@
             );
         p1 = window.web3.eth.abi.encodeParameter('uint256', heroId);
         const txHash = await contract.methods
-                .unLockLevel()
+                .unLockLevel(p1)
                 .send({from: window.userWalletAddress,
                     maxPriorityFeePerGas: null,
                     maxFeePerGas: null,
-                    _attackingHero: p1,
                 });
     }
 
