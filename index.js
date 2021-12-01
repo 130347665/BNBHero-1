@@ -35,6 +35,7 @@
                 window.localStorage.setItem("userWalletAddress", selectedAccount);
                 window.chainId = await window.web3.eth.net.getId();
                 getHeros();
+                loginButton.setAttribute('disabled', 'disabled');
             } catch (error) {
                 console.error(error);
             }
