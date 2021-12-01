@@ -82,7 +82,7 @@
                 html = html + '<img style="width: 200px;" src="https://play.bnbheroes.io/cards/' + heros[i][0] + '.png" data-preview-src="https://play.bnbheroes.io/cards/' + heros[i][0] + '.png" class="rounded img-thumbnail card-img-top">';
                 html = html + '<h5 class="card-title text-center">NFT #' + heros[i][7] + '</h5>';
                 html = html + '<div class="progress"><div class="progress-bar bg-danger text-center text-dark" role="progressbar" style="width: ' + heros[i][6]/10 + '%;" aria-valuenow="' + heros[i][6] + '" aria-valuemin="0" aria-valuemax="100">' + heros[i][6] + '</div></div>';
-                if (exp != 999 || heros[i][6] >= 200) {
+                if (exp != 999 && heros[i][6] >= 200) {
                     html = html + '<button style="width: 100%;" type="button" onclick="fight(' + heros[i][7] + ')"class="btn btn-danger">Fight</button>';
                 }
                 
